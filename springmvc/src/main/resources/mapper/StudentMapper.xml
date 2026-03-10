@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yyj.springmvc.mapper.StudentMapper">
+    <resultMap id="BaseResultMap" type="com.yyj.springmvc.entity.Student">
+        <result column="s_id" jdbcType="VARCHAR" property="sid"/>
+        <result column="sname" jdbcType="VARCHAR" property="sname"/>
+        <result column="sage" jdbcType="INTEGER" property="sage"/>
+        <result column="ssex" jdbcType="VARCHAR" property="ssex"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.yyj.springmvc.entity.Student">
+        insert into s
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="sid != null">
+                s_id,
+            </if>
+            <if test="sname != null">
+                sname,
+            </if>
+            <if test="sage != null">
+                sage,
+            </if>
+            <if test="ssex != null">
+                ssex,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="sid != null">
+                #{sid,jdbcType=VARCHAR},
+            </if>
+            <if test="sname != null">
+                #{sname,jdbcType=VARCHAR},
+            </if>
+            <if test="sage != null">
+                #{sage,jdbcType=INTEGER},
+            </if>
+            <if test="ssex != null">
+                #{ssex,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateById">
+        update s
+        <trim prefix="set" suffixOverrides=",">
+            <if test="sname != null">
+                sname = #{sname,jdbcType=VARCHAR},
+            </if>
+            <if test="sage != null">
+                sage = #{sage,jdbcType=INTEGER},
+            </if>
+            <if test="ssex != null">
+                ssex = #{ssex,jdbcType=VARCHAR},
+            </if>
+        </trim>
+        where s_id = #{sid,jdbcType=VARCHAR}
+    </update>
+
+    <delete id="deleteById">
+        delete from s where s_id = #{sid,jdbcType=VARCHAR}
+    </delete>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        select s_id, sname, sage, ssex
+        from s
+        where s_id = #{sid,jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        select s_id, sname, sage, ssex
+        from s
+        order by s_id
+    </select>
+</mapper>
