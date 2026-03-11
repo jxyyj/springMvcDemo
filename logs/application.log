@@ -2425,3 +2425,441 @@ Caused by: java.lang.Error: Unresolved compilation problem:
 11:43:54.018 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
 11:43:54.019 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
 11:43:54.019 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='202102811439', sname='闫寅杰123', sage=24, ssex='男'}, Student{sid='202102811440', sname='闫寅杰1', sage=24, ssex='男'}])
+11:45:42.613 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:45:42.613 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/logout
+11:45:42.613 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:45:42.613 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.LoginController.logout
+11:45:42.613 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: [org.apache.catalina.session.StandardSessionFacade@218d966b]
+11:45:42.618 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:45:42.619 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.LoginController.logout
+11:45:42.619 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=登出成功)
+11:45:47.434 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:45:47.435 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/login
+11:45:47.435 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: POST
+11:45:47.435 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.LoginController.login
+11:45:47.435 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: [com.yyj.springmvc.entity.LoginRequest@2f884783, org.apache.catalina.session.StandardSessionFacade@214fac02]
+11:45:47.452 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:45:47.452 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.LoginController.login
+11:45:47.452 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzczMjAwNzQ3NDM2LCJleHAiOjE3NzMyODcxNDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.jGlAlU3Xd8NErmG2NKPpplVY4eVDBbwHQUKK4D5E33c
+11:45:47.653 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:45:47.654 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/getAll
+11:45:47.654 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:45:47.654 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:45:47.654 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: []
+11:45:47.654 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:45:47.654 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.getAllStudents
+11:45:47.654 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: []
+11:45:47.668 [http-nio-8080-exec-9] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==>  Preparing: select s_id, sname, sage, ssex from s order by s_id
+11:45:47.669 [http-nio-8080-exec-9] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==> Parameters: 
+11:45:47.672 [http-nio-8080-exec-9] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - <==      Total: 2
+11:45:47.673 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 19 ms
+11:45:47.673 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: [Student{sid='202102811439', sname='闫寅杰123', sage=24, ssex='男'}, Student{sid='202102811440', sname='闫寅杰1', sage=24, ssex='男'}]
+11:45:47.673 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:45:47.673 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:45:47.673 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='202102811439', sname='闫寅杰123', sage=24, ssex='男'}, Student{sid='202102811440', sname='闫寅杰1', sage=24, ssex='男'}])
+11:45:53.706 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:45:53.707 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/update
+11:45:53.707 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: POST
+11:45:53.707 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.updateStudent
+11:45:53.707 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: [Student{sid='202102811440', sname='闫寅杰123', sage=24, ssex='男'}]
+11:45:53.707 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:45:53.707 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.updateStudent
+11:45:53.708 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: [Student{sid='202102811440', sname='闫寅杰123', sage=24, ssex='男'}]
+11:45:53.708 [http-nio-8080-exec-1] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - ==>  Preparing: update s set sname = ?, sage = ?, ssex = ? where s_id = ?
+11:45:53.713 [http-nio-8080-exec-1] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - ==> Parameters: 闫寅杰123(String), 24(Integer), 男(String), 202102811440(String)
+11:45:53.727 [http-nio-8080-exec-1] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - <==    Updates: 1
+11:45:53.728 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 20 ms
+11:45:53.728 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: 1
+11:45:53.728 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:45:53.728 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.updateStudent
+11:45:53.728 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=更新学生成功, data=1)
+11:45:53.736 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:45:53.736 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/getAll
+11:45:53.736 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:45:53.736 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:45:53.736 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: []
+11:45:53.736 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:45:53.736 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.getAllStudents
+11:45:53.736 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: []
+11:45:53.737 [http-nio-8080-exec-3] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==>  Preparing: select s_id, sname, sage, ssex from s order by s_id
+11:45:53.737 [http-nio-8080-exec-3] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==> Parameters: 
+11:45:53.740 [http-nio-8080-exec-3] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - <==      Total: 2
+11:45:53.740 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 3 ms
+11:45:53.740 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: [Student{sid='202102811439', sname='闫寅杰123', sage=24, ssex='男'}, Student{sid='202102811440', sname='闫寅杰123', sage=24, ssex='男'}]
+11:45:53.740 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:45:53.740 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:45:53.740 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='202102811439', sname='闫寅杰123', sage=24, ssex='男'}, Student{sid='202102811440', sname='闫寅杰123', sage=24, ssex='男'}])
+11:46:05.987 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:46:05.988 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/update
+11:46:05.989 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: POST
+11:46:05.989 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.updateStudent
+11:46:05.990 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: [Student{sid='202102811440', sname='闫寅杰123', sage=249, ssex='男'}]
+11:46:05.990 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:46:05.990 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.updateStudent
+11:46:05.991 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: [Student{sid='202102811440', sname='闫寅杰123', sage=249, ssex='男'}]
+11:46:05.995 [http-nio-8080-exec-2] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - ==>  Preparing: update s set sname = ?, sage = ?, ssex = ? where s_id = ?
+11:46:05.995 [http-nio-8080-exec-2] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - ==> Parameters: 闫寅杰123(String), 249(Integer), 男(String), 202102811440(String)
+11:46:06.003 [http-nio-8080-exec-2] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - <==    Updates: 1
+11:46:06.003 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 12 ms
+11:46:06.003 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: 1
+11:46:06.003 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:46:06.003 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.updateStudent
+11:46:06.003 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=更新学生成功, data=1)
+11:46:06.029 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:46:06.030 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/getAll
+11:46:06.030 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:46:06.031 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:46:06.031 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: []
+11:46:06.031 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:46:06.031 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.getAllStudents
+11:46:06.031 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: []
+11:46:06.031 [http-nio-8080-exec-4] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==>  Preparing: select s_id, sname, sage, ssex from s order by s_id
+11:46:06.031 [http-nio-8080-exec-4] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==> Parameters: 
+11:46:06.033 [http-nio-8080-exec-4] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - <==      Total: 2
+11:46:06.034 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 3 ms
+11:46:06.034 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: [Student{sid='202102811439', sname='闫寅杰123', sage=24, ssex='男'}, Student{sid='202102811440', sname='闫寅杰123', sage=249, ssex='男'}]
+11:46:06.034 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:46:06.034 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:46:06.034 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='202102811439', sname='闫寅杰123', sage=24, ssex='男'}, Student{sid='202102811440', sname='闫寅杰123', sage=249, ssex='男'}])
+11:46:14.331 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:46:14.331 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/update
+11:46:14.331 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: POST
+11:46:14.331 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.updateStudent
+11:46:14.331 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: [Student{sid='202102811440', sname='闫寅杰1290', sage=249, ssex='男'}]
+11:46:14.331 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:46:14.331 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.updateStudent
+11:46:14.331 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: [Student{sid='202102811440', sname='闫寅杰1290', sage=249, ssex='男'}]
+11:46:14.333 [http-nio-8080-exec-5] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - ==>  Preparing: update s set sname = ?, sage = ?, ssex = ? where s_id = ?
+11:46:14.334 [http-nio-8080-exec-5] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - ==> Parameters: 闫寅杰1290(String), 249(Integer), 男(String), 202102811440(String)
+11:46:14.340 [http-nio-8080-exec-5] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - <==    Updates: 1
+11:46:14.341 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 10 ms
+11:46:14.341 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: 1
+11:46:14.341 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:46:14.341 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.updateStudent
+11:46:14.342 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=更新学生成功, data=1)
+11:46:14.349 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:46:14.350 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/getAll
+11:46:14.350 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:46:14.350 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:46:14.351 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: []
+11:46:14.351 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:46:14.351 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.getAllStudents
+11:46:14.351 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: []
+11:46:14.351 [http-nio-8080-exec-6] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==>  Preparing: select s_id, sname, sage, ssex from s order by s_id
+11:46:14.351 [http-nio-8080-exec-6] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==> Parameters: 
+11:46:14.354 [http-nio-8080-exec-6] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - <==      Total: 2
+11:46:14.355 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 4 ms
+11:46:14.355 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: [Student{sid='202102811439', sname='闫寅杰123', sage=24, ssex='男'}, Student{sid='202102811440', sname='闫寅杰1290', sage=249, ssex='男'}]
+11:46:14.355 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:46:14.355 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:46:14.355 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='202102811439', sname='闫寅杰123', sage=24, ssex='男'}, Student{sid='202102811440', sname='闫寅杰1290', sage=249, ssex='男'}])
+11:46:18.072 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:46:18.072 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/getAll
+11:46:18.072 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:46:18.073 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:46:18.073 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: []
+11:46:18.073 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:46:18.073 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.getAllStudents
+11:46:18.073 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: []
+11:46:18.073 [http-nio-8080-exec-7] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==>  Preparing: select s_id, sname, sage, ssex from s order by s_id
+11:46:18.073 [http-nio-8080-exec-7] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==> Parameters: 
+11:46:18.074 [http-nio-8080-exec-7] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - <==      Total: 2
+11:46:18.076 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 3 ms
+11:46:18.076 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: [Student{sid='202102811439', sname='闫寅杰123', sage=24, ssex='男'}, Student{sid='202102811440', sname='闫寅杰1290', sage=249, ssex='男'}]
+11:46:18.076 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:46:18.076 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:46:18.076 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='202102811439', sname='闫寅杰123', sage=24, ssex='男'}, Student{sid='202102811440', sname='闫寅杰1290', sage=249, ssex='男'}])
+11:46:21.896 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:46:21.896 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/delete
+11:46:21.897 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: DELETE
+11:46:21.897 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.deleteStudent
+11:46:21.898 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: [202102811440]
+11:46:21.898 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:46:21.898 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.deleteStudent
+11:46:21.898 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: [202102811440]
+11:46:21.898 [http-nio-8080-exec-9] DEBUG com.yyj.springmvc.mapper.StudentMapper.deleteById - ==>  Preparing: delete from s where s_id = ?
+11:46:21.900 [http-nio-8080-exec-9] DEBUG com.yyj.springmvc.mapper.StudentMapper.deleteById - ==> Parameters: 202102811440(String)
+11:46:21.909 [http-nio-8080-exec-9] DEBUG com.yyj.springmvc.mapper.StudentMapper.deleteById - <==    Updates: 1
+11:46:21.909 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 11 ms
+11:46:21.909 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: 1
+11:46:21.909 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:46:21.909 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.deleteStudent
+11:46:21.909 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=删除学生成功, data=1)
+11:46:21.918 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:46:21.918 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/getAll
+11:46:21.918 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:46:21.918 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:46:21.918 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: []
+11:46:21.918 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:46:21.918 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.getAllStudents
+11:46:21.918 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: []
+11:46:21.918 [http-nio-8080-exec-10] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==>  Preparing: select s_id, sname, sage, ssex from s order by s_id
+11:46:21.918 [http-nio-8080-exec-10] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==> Parameters: 
+11:46:21.920 [http-nio-8080-exec-10] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - <==      Total: 1
+11:46:21.920 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 2 ms
+11:46:21.921 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: [Student{sid='202102811439', sname='闫寅杰123', sage=24, ssex='男'}]
+11:46:21.921 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:46:21.921 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:46:21.921 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='202102811439', sname='闫寅杰123', sage=24, ssex='男'}])
+11:46:28.102 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:46:28.103 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/getAll
+11:46:28.103 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:46:28.103 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:46:28.103 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: []
+11:46:28.104 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:46:28.104 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.getAllStudents
+11:46:28.104 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: []
+11:46:28.106 [http-nio-8080-exec-1] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==>  Preparing: select s_id, sname, sage, ssex from s order by s_id
+11:46:28.106 [http-nio-8080-exec-1] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==> Parameters: 
+11:46:28.109 [http-nio-8080-exec-1] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - <==      Total: 1
+11:46:28.110 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 6 ms
+11:46:28.110 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: [Student{sid='202102811439', sname='闫寅杰123', sage=24, ssex='男'}]
+11:46:28.111 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:46:28.111 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:46:28.111 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='202102811439', sname='闫寅杰123', sage=24, ssex='男'}])
+11:46:32.180 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:46:32.180 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/update
+11:46:32.180 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: POST
+11:46:32.180 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.updateStudent
+11:46:32.180 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: [Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}]
+11:46:32.180 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:46:32.180 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.updateStudent
+11:46:32.180 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: [Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}]
+11:46:32.182 [http-nio-8080-exec-3] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - ==>  Preparing: update s set sname = ?, sage = ?, ssex = ? where s_id = ?
+11:46:32.183 [http-nio-8080-exec-3] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - ==> Parameters: 闫寅杰(String), 24(Integer), 男(String), 202102811439(String)
+11:46:32.189 [http-nio-8080-exec-3] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - <==    Updates: 1
+11:46:32.189 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 9 ms
+11:46:32.189 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: 1
+11:46:32.189 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:46:32.189 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.updateStudent
+11:46:32.189 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=更新学生成功, data=1)
+11:46:32.209 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:46:32.209 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/getAll
+11:46:32.209 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:46:32.209 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:46:32.209 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: []
+11:46:32.209 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:46:32.209 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.getAllStudents
+11:46:32.209 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: []
+11:46:32.210 [http-nio-8080-exec-2] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==>  Preparing: select s_id, sname, sage, ssex from s order by s_id
+11:46:32.210 [http-nio-8080-exec-2] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==> Parameters: 
+11:46:32.211 [http-nio-8080-exec-2] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - <==      Total: 1
+11:46:32.212 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 3 ms
+11:46:32.212 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: [Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}]
+11:46:32.212 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:46:32.212 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:46:32.212 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}])
+11:49:37.849 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:49:37.849 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/getAll
+11:49:37.849 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:49:37.849 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:49:37.849 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: []
+11:49:37.849 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:49:37.849 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.getAllStudents
+11:49:37.849 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: []
+11:49:37.852 [http-nio-8080-exec-5] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==>  Preparing: select s_id, sname, sage, ssex from s order by s_id
+11:49:37.852 [http-nio-8080-exec-5] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==> Parameters: 
+11:49:37.853 [http-nio-8080-exec-5] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - <==      Total: 1
+11:49:37.854 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 5 ms
+11:49:37.854 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: [Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}]
+11:49:37.854 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:49:37.854 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:49:37.854 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}])
+11:49:56.042 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:49:56.042 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/getAll
+11:49:56.042 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:49:56.042 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:49:56.042 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: []
+11:49:56.042 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:49:56.042 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.getAllStudents
+11:49:56.042 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: []
+11:49:56.044 [http-nio-8080-exec-6] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==>  Preparing: select s_id, sname, sage, ssex from s order by s_id
+11:49:56.044 [http-nio-8080-exec-6] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==> Parameters: 
+11:49:56.049 [http-nio-8080-exec-6] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - <==      Total: 1
+11:49:56.051 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 9 ms
+11:49:56.051 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: [Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}]
+11:49:56.051 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:49:56.051 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:49:56.051 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}])
+11:51:51.495 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:51:51.495 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/add
+11:51:51.495 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: POST
+11:51:51.495 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.addStudent
+11:51:51.495 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: [Student{sid='1', sname='asd', sage=32, ssex='女'}]
+11:51:51.495 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:51:51.495 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.addStudent
+11:51:51.495 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: [Student{sid='1', sname='asd', sage=32, ssex='女'}]
+11:51:51.497 [http-nio-8080-exec-8] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectById - ==>  Preparing: select s_id, sname, sage, ssex from s where s_id = ?
+11:51:51.497 [http-nio-8080-exec-8] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectById - ==> Parameters: 1(String)
+11:51:51.499 [http-nio-8080-exec-8] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectById - <==      Total: 0
+11:51:51.499 [http-nio-8080-exec-8] DEBUG com.yyj.springmvc.mapper.StudentMapper.insert - ==>  Preparing: insert into s ( s_id, sname, sage, ssex ) values ( ?, ?, ?, ? )
+11:51:51.499 [http-nio-8080-exec-8] DEBUG com.yyj.springmvc.mapper.StudentMapper.insert - ==> Parameters: 1(String), asd(String), 32(Integer), 女(String)
+11:51:51.505 [http-nio-8080-exec-8] DEBUG com.yyj.springmvc.mapper.StudentMapper.insert - <==    Updates: 1
+11:51:51.507 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.service.impl.StudentServiceImpl - 成功添加学生 1
+11:51:51.507 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 12 ms
+11:51:51.507 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: null
+11:51:51.507 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:51:51.507 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.addStudent
+11:51:51.507 [http-nio-8080-exec-8] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=null)
+11:51:51.516 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:51:51.516 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/getAll
+11:51:51.516 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:51:51.516 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:51:51.516 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: []
+11:51:51.516 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:51:51.516 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.getAllStudents
+11:51:51.516 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: []
+11:51:51.516 [http-nio-8080-exec-9] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==>  Preparing: select s_id, sname, sage, ssex from s order by s_id
+11:51:51.516 [http-nio-8080-exec-9] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==> Parameters: 
+11:51:51.518 [http-nio-8080-exec-9] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - <==      Total: 2
+11:51:51.518 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 2 ms
+11:51:51.519 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: [Student{sid='1', sname='asd', sage=32, ssex='女'}, Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}]
+11:51:51.519 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:51:51.519 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:51:51.519 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='1', sname='asd', sage=32, ssex='女'}, Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}])
+11:52:05.978 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:52:05.980 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/add
+11:52:05.980 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: POST
+11:52:05.980 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.addStudent
+11:52:05.980 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: [Student{sid='2', sname='qwe', sage=98, ssex='女'}]
+11:52:05.980 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:52:05.980 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.addStudent
+11:52:05.980 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: [Student{sid='2', sname='qwe', sage=98, ssex='女'}]
+11:52:05.981 [http-nio-8080-exec-10] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectById - ==>  Preparing: select s_id, sname, sage, ssex from s where s_id = ?
+11:52:05.981 [http-nio-8080-exec-10] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectById - ==> Parameters: 2(String)
+11:52:05.984 [http-nio-8080-exec-10] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectById - <==      Total: 0
+11:52:05.985 [http-nio-8080-exec-10] DEBUG com.yyj.springmvc.mapper.StudentMapper.insert - ==>  Preparing: insert into s ( s_id, sname, sage, ssex ) values ( ?, ?, ?, ? )
+11:52:05.986 [http-nio-8080-exec-10] DEBUG com.yyj.springmvc.mapper.StudentMapper.insert - ==> Parameters: 2(String), qwe(String), 98(Integer), 女(String)
+11:52:05.991 [http-nio-8080-exec-10] DEBUG com.yyj.springmvc.mapper.StudentMapper.insert - <==    Updates: 1
+11:52:05.992 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.service.impl.StudentServiceImpl - 成功添加学生 2
+11:52:05.992 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 12 ms
+11:52:05.992 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: null
+11:52:05.992 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:52:05.992 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.addStudent
+11:52:05.992 [http-nio-8080-exec-10] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=null)
+11:52:05.997 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:52:05.997 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/getAll
+11:52:05.999 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:52:05.999 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:52:05.999 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: []
+11:52:05.999 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:52:05.999 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.getAllStudents
+11:52:05.999 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: []
+11:52:05.999 [http-nio-8080-exec-1] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==>  Preparing: select s_id, sname, sage, ssex from s order by s_id
+11:52:05.999 [http-nio-8080-exec-1] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==> Parameters: 
+11:52:06.001 [http-nio-8080-exec-1] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - <==      Total: 3
+11:52:06.002 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 3 ms
+11:52:06.004 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: [Student{sid='1', sname='asd', sage=32, ssex='女'}, Student{sid='2', sname='qwe', sage=98, ssex='女'}, Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}]
+11:52:06.004 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:52:06.004 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:52:06.004 [http-nio-8080-exec-1] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='1', sname='asd', sage=32, ssex='女'}, Student{sid='2', sname='qwe', sage=98, ssex='女'}, Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}])
+11:52:08.850 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:52:08.850 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/update
+11:52:08.850 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: POST
+11:52:08.850 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.updateStudent
+11:52:08.850 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: [Student{sid='2', sname='qwe1', sage=98, ssex='女'}]
+11:52:08.850 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:52:08.850 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.updateStudent
+11:52:08.850 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: [Student{sid='2', sname='qwe1', sage=98, ssex='女'}]
+11:52:08.851 [http-nio-8080-exec-3] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - ==>  Preparing: update s set sname = ?, sage = ?, ssex = ? where s_id = ?
+11:52:08.852 [http-nio-8080-exec-3] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - ==> Parameters: qwe1(String), 98(Integer), 女(String), 2(String)
+11:52:08.857 [http-nio-8080-exec-3] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - <==    Updates: 1
+11:52:08.857 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 7 ms
+11:52:08.857 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: 1
+11:52:08.857 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:52:08.857 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.updateStudent
+11:52:08.857 [http-nio-8080-exec-3] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=更新学生成功, data=1)
+11:52:08.864 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:52:08.864 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/getAll
+11:52:08.864 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:52:08.864 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:52:08.864 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: []
+11:52:08.864 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:52:08.864 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.getAllStudents
+11:52:08.864 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: []
+11:52:08.865 [http-nio-8080-exec-2] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==>  Preparing: select s_id, sname, sage, ssex from s order by s_id
+11:52:08.866 [http-nio-8080-exec-2] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==> Parameters: 
+11:52:08.867 [http-nio-8080-exec-2] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - <==      Total: 3
+11:52:08.867 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 3 ms
+11:52:08.867 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: [Student{sid='1', sname='asd', sage=32, ssex='女'}, Student{sid='2', sname='qwe1', sage=98, ssex='女'}, Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}]
+11:52:08.867 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:52:08.867 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:52:08.867 [http-nio-8080-exec-2] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='1', sname='asd', sage=32, ssex='女'}, Student{sid='2', sname='qwe1', sage=98, ssex='女'}, Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}])
+11:52:22.138 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:52:22.138 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/add
+11:52:22.138 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: POST
+11:52:22.138 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.addStudent
+11:52:22.138 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: [Student{sid='3', sname='asd', sage=3, ssex='男'}]
+11:52:22.139 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:52:22.139 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.addStudent
+11:52:22.139 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: [Student{sid='3', sname='asd', sage=3, ssex='男'}]
+11:52:22.139 [http-nio-8080-exec-4] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectById - ==>  Preparing: select s_id, sname, sage, ssex from s where s_id = ?
+11:52:22.139 [http-nio-8080-exec-4] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectById - ==> Parameters: 3(String)
+11:52:22.141 [http-nio-8080-exec-4] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectById - <==      Total: 0
+11:52:22.141 [http-nio-8080-exec-4] DEBUG com.yyj.springmvc.mapper.StudentMapper.insert - ==>  Preparing: insert into s ( s_id, sname, sage, ssex ) values ( ?, ?, ?, ? )
+11:52:22.141 [http-nio-8080-exec-4] DEBUG com.yyj.springmvc.mapper.StudentMapper.insert - ==> Parameters: 3(String), asd(String), 3(Integer), 男(String)
+11:52:22.145 [http-nio-8080-exec-4] DEBUG com.yyj.springmvc.mapper.StudentMapper.insert - <==    Updates: 1
+11:52:22.145 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.service.impl.StudentServiceImpl - 成功添加学生 3
+11:52:22.145 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 6 ms
+11:52:22.145 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: null
+11:52:22.145 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:52:22.146 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.addStudent
+11:52:22.146 [http-nio-8080-exec-4] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=null)
+11:52:22.153 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:52:22.153 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/getAll
+11:52:22.153 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:52:22.153 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:52:22.153 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: []
+11:52:22.153 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:52:22.153 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.getAllStudents
+11:52:22.153 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: []
+11:52:22.153 [http-nio-8080-exec-5] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==>  Preparing: select s_id, sname, sage, ssex from s order by s_id
+11:52:22.154 [http-nio-8080-exec-5] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==> Parameters: 
+11:52:22.155 [http-nio-8080-exec-5] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - <==      Total: 4
+11:52:22.156 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 3 ms
+11:52:22.156 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: [Student{sid='1', sname='asd', sage=32, ssex='女'}, Student{sid='2', sname='qwe1', sage=98, ssex='女'}, Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}, Student{sid='3', sname='asd', sage=3, ssex='男'}]
+11:52:22.156 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:52:22.156 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:52:22.156 [http-nio-8080-exec-5] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='1', sname='asd', sage=32, ssex='女'}, Student{sid='2', sname='qwe1', sage=98, ssex='女'}, Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}, Student{sid='3', sname='asd', sage=3, ssex='男'}])
+11:52:27.820 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:52:27.820 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/update
+11:52:27.820 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: POST
+11:52:27.820 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.updateStudent
+11:52:27.820 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: [Student{sid='3', sname='asdq', sage=3, ssex='男'}]
+11:52:27.820 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:52:27.820 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.updateStudent
+11:52:27.820 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: [Student{sid='3', sname='asdq', sage=3, ssex='男'}]
+11:52:27.820 [http-nio-8080-exec-6] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - ==>  Preparing: update s set sname = ?, sage = ?, ssex = ? where s_id = ?
+11:52:27.820 [http-nio-8080-exec-6] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - ==> Parameters: asdq(String), 3(Integer), 男(String), 3(String)
+11:52:27.825 [http-nio-8080-exec-6] DEBUG com.yyj.springmvc.mapper.StudentMapper.updateById - <==    Updates: 1
+11:52:27.826 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 5 ms
+11:52:27.826 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: 1
+11:52:27.826 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:52:27.826 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.updateStudent
+11:52:27.826 [http-nio-8080-exec-6] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=更新学生成功, data=1)
+11:52:27.833 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:52:27.833 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/student/getAll
+11:52:27.833 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:52:27.833 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:52:27.833 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: []
+11:52:27.833 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Service Execution ===
+11:52:27.833 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.service.impl.StudentServiceImpl.getAllStudents
+11:52:27.833 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Args: []
+11:52:27.833 [http-nio-8080-exec-7] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==>  Preparing: select s_id, sname, sage, ssex from s order by s_id
+11:52:27.833 [http-nio-8080-exec-7] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - ==> Parameters: 
+11:52:27.835 [http-nio-8080-exec-7] DEBUG com.yyj.springmvc.mapper.StudentMapper.selectAll - <==      Total: 4
+11:52:27.837 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Execution Time: 4 ms
+11:52:27.837 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Result: [Student{sid='1', sname='asd', sage=32, ssex='女'}, Student{sid='2', sname='qwe1', sage=98, ssex='女'}, Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}, Student{sid='3', sname='asdq', sage=3, ssex='男'}]
+11:52:27.837 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:52:27.837 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.StudentController.getAllStudents
+11:52:27.837 [http-nio-8080-exec-7] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=[Student{sid='1', sname='asd', sage=32, ssex='女'}, Student{sid='2', sname='qwe1', sage=98, ssex='女'}, Student{sid='202102811439', sname='闫寅杰', sage=24, ssex='男'}, Student{sid='3', sname='asdq', sage=3, ssex='男'}])
+11:59:12.382 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Request ===
+11:59:12.382 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - URL: http://localhost:8080/logout
+11:59:12.382 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - HTTP Method: GET
+11:59:12.382 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Controller Method: com.yyj.springmvc.controller.LoginController.logout
+11:59:12.382 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Request Args: [org.apache.catalina.session.StandardSessionFacade@4e1668f5]
+11:59:12.382 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - === Controller Response ===
+11:59:12.382 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Method: com.yyj.springmvc.controller.LoginController.logout
+11:59:12.382 [http-nio-8080-exec-9] INFO  com.yyj.springmvc.aspect.LoggingAspect - Response: Result(code=200, message=success, data=登出成功)
+16:02:08.161 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+16:02:08.208 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
