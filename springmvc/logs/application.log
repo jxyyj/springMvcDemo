@@ -1,0 +1,10 @@
+08:37:27.630 [main] INFO  com.yyj.springmvc.SpringmvcApplication - Starting SpringmvcApplication using Java 25.0.1 on LAPTOP-9TAACR21 with PID 55080 (C:\Users\闫寅杰\Desktop\springMvcDemo\springmvc\target\classes started by 闫寅杰 in C:\Users\闫寅杰\Desktop\springMvcDemo\springmvc)
+08:37:27.646 [main] INFO  com.yyj.springmvc.SpringmvcApplication - No active profile set, falling back to 1 default profile: "default"
+08:37:29.506 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+08:37:29.508 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+08:37:29.511 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.68]
+08:37:29.785 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08:37:31.443 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+08:37:32.915 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+08:37:34.295 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+08:37:34.334 [main] INFO  com.yyj.springmvc.SpringmvcApplication - Started SpringmvcApplication in 7.129 seconds (JVM running for 8.311)
