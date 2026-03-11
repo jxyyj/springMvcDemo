@@ -6,6 +6,8 @@ const username = ref('');
 const password = ref('');
 const error = ref('');
 const loading = ref(false);
+const showPassword = ref(false);
+const isTyping = ref(false);
 
 const handleLogin = async () => {
   error.value = '';
@@ -29,35 +31,64 @@ const handleLogin = async () => {
     loading.value = false;
   }
 };
+
+const handleGoogleSignIn = async () => {
+  // 这里可以实现Google登录逻辑
+  alert('Google登录功能暂未实现');
+};
 </script>
 
 <template>
   <div class="login-page">
     <!-- 左侧背景区域 -->
     <div class="login-bg">
+      <!-- 品牌标识 -->
       <div class="bg-header">
-        <div class="logo">学生管理系统</div>
+        <div class="logo">
+          <div class="logo-icon">S</div>
+          <span>学生管理系统</span>
+        </div>
       </div>
+      
+      <!-- 动画角色 -->
       <div class="illustration">
         <div class="character character-1"></div>
         <div class="character character-2"></div>
         <div class="character character-3"></div>
       </div>
+      
+      <!-- 底部链接 -->
       <div class="bg-footer">
         <a href="#">隐私政策</a>
         <span>•</span>
         <a href="#">服务条款</a>
       </div>
+      
+      <!-- 装饰性元素 -->
+      <div class="decorative-grid"></div>
+      <div class="decorative-circle circle-1"></div>
+      <div class="decorative-circle circle-2"></div>
     </div>
     
     <!-- 右侧登录表单 -->
     <div class="login-container">
+      <!-- 移动端品牌标识 -->
+      <div class="mobile-logo">
+        <div class="logo-icon">S</div>
+        <span>学生管理系统</span>
+      </div>
+      
+      <!-- 登录头部 -->
       <div class="login-header">
         <h1>欢迎回来！</h1>
-        <p>请登录您的账户继续管理学生信息</p>
+        <p>请填写您的详细信息</p>
       </div>
+      
+      <!-- 错误提示 -->
       <div v-if="error" class="error">{{ error }}</div>
-      <form @submit.prevent="handleLogin">
+      
+      <!-- 登录表单 -->
+      <form @submit.prevent="handleLogin" class="login-form">
         <div class="form-group">
           <label for="username">电子邮箱</label>
           <input 
@@ -66,43 +97,57 @@ const handleLogin = async () => {
             v-model="username" 
             required 
             :disabled="loading"
-            placeholder="your@email.com"
+            placeholder="you@example.com"
+            @focus="isTyping = true"
+            @blur="isTyping = false"
           >
         </div>
         <div class="form-group">
           <label for="password">密码</label>
           <div class="password-input">
             <input 
-              type="password" 
+              :type="showPassword ? 'text' : 'password'" 
               id="password" 
               v-model="password" 
               required 
               :disabled="loading"
               placeholder="••••••••"
             >
+            <button 
+              type="button" 
+              class="password-toggle" 
+              @click="showPassword = !showPassword"
+            >
+              {{ showPassword ? '👁️' : '👁️‍🗨️' }}
+            </button>
           </div>
         </div>
         <div class="form-options">
           <div class="remember-me">
             <input type="checkbox" id="remember">
-            <label for="remember">记住我</label>
+            <label for="remember">记住30天</label>
           </div>
           <a href="#" class="forgot-password">忘记密码？</a>
         </div>
-        <button type="submit" :disabled="loading">
+        <button type="submit" :disabled="loading" class="login-btn">
           {{ loading ? '登录中...' : '登录' }}
         </button>
-        <div class="divider">
-          <span>或</span>
-        </div>
-        <button type="button" class="google-btn">
-          <span class="google-icon">G</span>
+      </form>
+      
+      <!-- Google登录按钮 -->
+      <div class="google-login">
+        <button type="button" class="google-btn" @click="handleGoogleSignIn">
+          <svg class="google-icon" viewBox="0 0 488 512">
+            <path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 126 23.4 172.9 61.9l-76.2 76.2C322.3 113.2 289.4 96 248 96c-88.8 0-160.1 71.9-160.1 160.1s71.3 160.1 160.1 160.1c98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 26.9 3.9 41.4z"></path>
+          </svg>
           使用 Google 登录
         </button>
-        <div class="register-link">
-          还没有账号？ <a href="#">立即注册</a>
-        </div>
-      </form>
+      </div>
+      
+      <!-- 注册链接 -->
+      <div class="register-link">
+        还没有账号？ <a href="#">立即注册</a>
+      </div>
     </div>
   </div>
 </template>
@@ -120,6 +165,7 @@ body {
   padding: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow: hidden;
+  background-color: #f9fafb;
 }
 </style>
 
@@ -142,10 +188,10 @@ body {
   flex: 0 0 50%;
   min-width: 50%;
   max-width: 50%;
-  background-color: #f3f4f6;
+  background: linear-gradient(to bottom right, #e5e7eb, #f3f4f6, #f9fafb);
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 48px;
   position: relative;
   overflow: hidden;
   animation: fadeInLeft 0.8s ease;
@@ -156,15 +202,31 @@ body {
 .bg-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 20px 0;
+  justify-content: flex-start;
+  z-index: 20;
 }
 
 /* 品牌标识 */
 .logo {
-  font-size: 24px;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 600;
   color: #374151;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background-color: #8b5cf6;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 /* 插图容器 */
@@ -174,7 +236,8 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 40px 0;
+  z-index: 20;
+  height: 500px;
 }
 
 /* 卡通角色 */
@@ -287,11 +350,10 @@ body {
 .bg-footer {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
+  gap: 32px;
   font-size: 14px;
   color: #6b7280;
-  padding: 20px 0;
+  z-index: 20;
 }
 
 .bg-footer a {
@@ -306,12 +368,45 @@ body {
   text-decoration: underline;
 }
 
+/* 装饰性元素 */
+.decorative-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: 10;
+}
+
+.decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(139, 92, 246, 0.1);
+  filter: blur(3xl);
+  z-index: 10;
+}
+
+.circle-1 {
+  top: 25%;
+  right: 25%;
+  width: 256px;
+  height: 256px;
+}
+
+.circle-2 {
+  bottom: 25%;
+  left: 25%;
+  width: 384px;
+  height: 384px;
+  background-color: rgba(249, 115, 22, 0.1);
+}
+
 /* 右侧登录容器 */
 .login-container {
   flex: 0 0 50%;
   min-width: 50%;
   max-width: 50%;
-  padding: 80px;
+  padding: 48px;
   background-color: white;
   animation: slideInRight 0.8s ease;
   overflow-y: auto;
@@ -321,19 +416,41 @@ body {
   align-items: center;
 }
 
-.login-container > * {
-  width: 100%;
-  max-width: 400px;
+/* 移动端品牌标识 */
+.mobile-logo {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 48px;
+}
+
+.mobile-logo .logo-icon {
+  width: 32px;
+  height: 32px;
+  background-color: #8b5cf6;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 /* 登录头部 */
 .login-header {
-  margin-bottom: 48px;
+  margin-bottom: 40px;
   text-align: center;
+  width: 100%;
+  max-width: 420px;
 }
 
 .login-header h1 {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   color: #111827;
   font-size: 32px;
   font-weight: 700;
@@ -342,35 +459,45 @@ body {
 
 .login-header p {
   color: #6b7280;
-  font-size: 16px;
+  font-size: 14px;
   margin: 0;
   line-height: 1.5;
+}
+
+/* 登录表单 */
+.login-form {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* 错误提示样式 */
 .error {
   color: #dc2626;
   text-align: left;
-  margin-bottom: 24px;
-  padding: 16px 20px;
+  padding: 12px 16px;
   background-color: #fef2f2;
   border-radius: 8px;
-  border-left: 4px solid #dc2626;
-  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.1);
-  animation: fadeIn 0.3s ease;
+  border: 1px solid #fecaca;
   font-size: 14px;
   line-height: 1.4;
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 20px;
 }
 
 /* 表单组样式 */
 .form-group {
-  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 /* 标签样式 */
 label {
   display: block;
-  margin-bottom: 8px;
   font-weight: 500;
   color: #374151;
   font-size: 14px;
@@ -380,13 +507,14 @@ label {
 /* 输入框样式 */
 input {
   width: 100%;
-  padding: 14px 16px;
+  padding: 12px 16px;
   border: 1px solid #e5e7eb;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 16px;
   transition: all 0.3s ease;
   background-color: white;
   font-family: inherit;
+  height: 48px;
 }
 
 /* 输入框聚焦样式 */
@@ -409,12 +537,31 @@ input:disabled {
   position: relative;
 }
 
+/* 密码显示/隐藏按钮 */
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  box-shadow: none;
+  margin: 0;
+}
+
 /* 表单选项 */
 .form-options {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
 }
 
 /* 记住我选项 */
@@ -454,11 +601,11 @@ input:disabled {
 }
 
 /* 登录按钮 */
-button {
+.login-btn {
   width: 100%;
-  padding: 14px;
+  padding: 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -466,29 +613,25 @@ button {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   font-family: inherit;
   letter-spacing: 0.01em;
-}
-
-/* 主登录按钮 */
-button[type="submit"] {
   background-color: #8b5cf6;
   color: white;
-  margin-bottom: 24px;
+  height: 48px;
   position: relative;
   overflow: hidden;
 }
 
-button[type="submit"]:hover {
+.login-btn:hover {
   background-color: #7c3aed;
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(139, 92, 246, 0.3);
 }
 
-button[type="submit"]:active {
+.login-btn:active {
   transform: translateY(0);
 }
 
 /* 按钮禁用样式 */
-button:disabled {
+.login-btn:disabled {
   background-color: #9ca3af;
   cursor: not-allowed;
   opacity: 0.7;
@@ -496,45 +639,32 @@ button:disabled {
   box-shadow: none;
 }
 
-/* 分隔线 */
-.divider {
-  position: relative;
-  text-align: center;
-  margin: 24px 0;
+/* Google登录按钮 */
+.google-login {
+  width: 100%;
+  max-width: 420px;
+  margin-top: 24px;
 }
 
-.divider span {
-  background-color: white;
-  padding: 0 16px;
-  font-size: 14px;
-  color: #6b7280;
-  position: relative;
-  z-index: 1;
-  font-weight: 500;
-}
-
-.divider::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: #e5e7eb;
-  z-index: 0;
-}
-
-/* Google 登录按钮 */
 .google-btn {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-family: inherit;
+  letter-spacing: 0.01em;
   background-color: white;
   color: #374151;
-  border: 1px solid #e5e7eb;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 24px;
-  transition: all 0.3s ease;
+  height: 48px;
 }
 
 .google-btn:hover {
@@ -544,18 +674,11 @@ button:disabled {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Google 图标 */
+/* Google图标 */
 .google-icon {
   width: 20px;
   height: 20px;
-  background-color: #4285f4;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 12px;
+  color: #4285f4;
 }
 
 /* 注册链接 */
@@ -563,7 +686,9 @@ button:disabled {
   text-align: center;
   font-size: 14px;
   color: #6b7280;
-  margin-top: 16px;
+  margin-top: 32px;
+  width: 100%;
+  max-width: 420px;
 }
 
 .register-link a {
@@ -627,79 +752,8 @@ button:disabled {
   }
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .login-page {
-    flex-direction: column;
-  }
-  
-  .login-bg {
-    width: 100%;
-    min-height: 400px;
-    padding: 40px 24px;
-  }
-  
-  .bg-header {
-    margin-bottom: 40px;
-  }
-  
-  .illustration {
-    margin: 20px 0;
-  }
-  
-  .character-1 {
-    width: 100px;
-    height: 120px;
-  }
-  
-  .character-2 {
-    width: 80px;
-    height: 100px;
-  }
-  
-  .character-3 {
-    width: 60px;
-    height: 80px;
-  }
-  
-  .login-container {
-    width: 100%;
-    padding: 48px 24px;
-  }
-  
-  .login-header h1 {
-    font-size: 28px;
-  }
-  
-  .login-header p {
-    font-size: 14px;
-  }
-  
-  input {
-    padding: 12px 14px;
-  }
-  
-  button {
-    padding: 12px;
-  }
-  
-  .form-options {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  
-  .forgot-password {
-    align-self: flex-end;
-  }
-  
-  .divider {
-    margin: 20px 0;
-  }
-}
-
 /* 加载动画 */
-button[type="submit"]:disabled::after {
+.login-btn:disabled::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -716,6 +770,87 @@ button[type="submit"]:disabled::after {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .login-bg {
+    padding: 32px;
+  }
+  
+  .login-container {
+    padding: 32px;
+  }
+  
+  .illustration {
+    height: 400px;
+  }
+  
+  .character-1 {
+    width: 100px;
+    height: 120px;
+  }
+  
+  .character-2 {
+    width: 80px;
+    height: 100px;
+  }
+  
+  .character-3 {
+    width: 60px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+  }
+  
+  .login-bg {
+    width: 100%;
+    min-height: 400px;
+    padding: 32px 24px;
+    display: none;
+  }
+  
+  .mobile-logo {
+    display: flex;
+  }
+  
+  .login-container {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 48px 24px;
+  }
+  
+  .login-header h1 {
+    font-size: 28px;
+  }
+  
+  .login-header p {
+    font-size: 14px;
+  }
+  
+  input {
+    padding: 12px 14px;
+  }
+  
+  .login-btn,
+  .google-btn {
+    padding: 12px;
+  }
+  
+  .form-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .forgot-password {
+    align-self: flex-end;
   }
 }
 </style>
