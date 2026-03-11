@@ -10,11 +10,8 @@ import java.io.Serializable;
  */
 public class Student implements Serializable {
     private String sid;
-
     private String sname;
-
     private Integer sage;
-
     private String ssex;
 
     private static final long serialVersionUID = 1L;
@@ -50,11 +47,9 @@ public class Student implements Serializable {
     /**
      * 设置学号
      * @param sid 学号
-     * @return Student
      */
-    public Student setSid(String sid) {
+    public void setSid(String sid) {
         this.sid = sid;
-        return this;
     }
 
     /**
@@ -68,11 +63,9 @@ public class Student implements Serializable {
     /**
      * 设置姓名
      * @param sname 姓名
-     * @return Student
      */
-    public Student setSname(String sname) {
+    public void setSname(String sname) {
         this.sname = sname;
-        return this;
     }
 
     /**
@@ -86,11 +79,9 @@ public class Student implements Serializable {
     /**
      * 设置年龄
      * @param sage 年龄
-     * @return Student
      */
-    public Student setSage(Integer sage) {
+    public void setSage(Integer sage) {
         this.sage = sage;
-        return this;
     }
 
     /**
@@ -104,10 +95,19 @@ public class Student implements Serializable {
     /**
      * 设置性别
      * @param ssex 性别
-     * @return Student
      */
-    public Student setSsex(String ssex) {
+    public void setSsex(String ssex) {
         this.ssex = ssex;
-        return this;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "sid='" + sid + '\'' +
+                ", sname='" + sname + '\'' +
+                ", sage=" + sage +
+                ", ssex='" + ssex + '\'' +
+                '}';
+    }
+
 }

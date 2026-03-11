@@ -36,6 +36,14 @@
     <!-- 配置静态资源访问 -->
     <mvc:resources mapping="/static/**" location="/static/"/>
 
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.yyj.springmvc.interceptor.JWTInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
     <!-- 配置视图解析器（如果需要JSP视图） -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>

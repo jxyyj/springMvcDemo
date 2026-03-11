@@ -1,7 +1,9 @@
 com\yyj\springmvc\service\StudentService.class
 com\yyj\springmvc\common\Result.class
+com\yyj\springmvc\controller\StudentController.class
+com\yyj\springmvc\controller\LoginController.class
+com\yyj\springmvc\interceptor\JWTInterceptor.class
+com\yyj\springmvc\entity\Student.class
 com\yyj\springmvc\mapper\StudentMapper.class
 com\yyj\springmvc\service\impl\StudentServiceImpl.class
-com\yyj\springmvc\controller\StudentController.class
 com\yyj\springmvc\aspect\LoggingAspect.class
-com\yyj\springmvc\entity\Student.class

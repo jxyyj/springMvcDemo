@@ -18,6 +18,10 @@ public class Result<T> implements Serializable {
         this.data = data;
     }
 
+    public static <T> Result<T> success() {
+        return new Result<>(200, "success", null);
+    }
+
     public static <T> Result<T> success(T data) {
         return new Result<>(200, "success", data);
     }
@@ -32,5 +36,10 @@ public class Result<T> implements Serializable {
 
     public static <T> Result<T> error(Integer code, String message) {
         return new Result<>(code, message, null);
+    }
+
+    public Result<T> data(T data) {
+        this.data = data;
+        return this;
     }
 }

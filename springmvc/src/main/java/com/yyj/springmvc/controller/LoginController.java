@@ -1,9 +1,10 @@
 package com.yyj.springmvc.controller;
 
+import com.yyj.springmvc.common.Result;
+import com.yyj.springmvc.entity.LoginRequest;
+import com.yyj.springmvc.utils.JWTUtil;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
@@ -13,33 +14,35 @@ import javax.servlet.http.HttpSession;
  * @author yan yinjie
  * @date 2026/03/11
  */
-@Controller
+@RestController
 public class LoginController {
 
-    @GetMapping("/login")
-    public String loginPage() {
-        return "login.html";
-    }
+//    @GetMapping("/login")
+//    public String loginPage() {
+//        return "login.html";
+//    }
 
     @PostMapping("/login")
-    public String login(@RequestParam("username") String username, 
-                       @RequestParam("password") String password, 
+    public String login (@RequestBody LoginRequest loginRequest,
                        HttpSession session) {
         // 简单的登录验证（实际项目中应该从数据库验证）
-        if ("admin".equals(username) && "admin".equals(password)) {
-            // 登录成功，将用户信息存入会话
-            session.setAttribute("user", username);
-            return "redirect:/index.html";
+        if ("admin".equals(loginRequest.getUsername()) && "123456".equals(loginRequest.getPassword())) {
+            // 登录成功，生成token
+            String token = JWTUtil.generateToken(loginRequest.getUsername());
+            // 将用户信息存入会话
+            session.setAttribute("user", loginRequest.getUsername());
+            return token;
         } else {
-            // 登录失败，重定向到登录页面
-            return "redirect:/login";
+            // 登录失败
+            return "用户名或密码错误";
         }
     }
 
     @GetMapping("/logout")
-    public String logout(HttpSession session) {
+    @ResponseBody
+    public Result logout(HttpSession session) {
         // 清除会话中的用户信息
         session.invalidate();
-        return "redirect:/login";
+        return Result.success("登出成功");
     }
 }

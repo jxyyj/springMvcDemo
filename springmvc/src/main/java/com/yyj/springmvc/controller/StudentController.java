@@ -14,7 +14,7 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @GetMapping("/getAll")
+    @GetMapping(value = "/getAll", produces = "application/json")
     public Result<List<Student>> getAllStudents() {
         List<Student> students = studentService.getAllStudents();
         return Result.success(students);
@@ -31,11 +31,11 @@ public class StudentController {
 
     @PostMapping("/add")
     public Result<Integer> addStudent(@RequestBody Student student) {
-        int result = studentService.addStudent(student);
-        if (result > 0) {
-            return Result.success(result, "添加学生成功");
+        String result = studentService.addStudent(student);
+        if (result != null) {
+            return Result.error(result);
         }
-        return Result.error("添加学生失败");
+        return Result.success();
     }
 
     @PostMapping("/update")

@@ -33,7 +33,7 @@ public interface StudentService {
      * @param student 学生
      * @return int
      */
-    int addStudent(Student student);
+    String addStudent(Student student);
 
     /**
      * 更新学生

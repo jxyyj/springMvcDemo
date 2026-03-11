@@ -29,13 +29,20 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public int addStudent(Student student) {
+    public String addStudent(Student student) {
         // 检查学生是否已存在
         if (studentMapper.selectById(student.getSid()) != null) {
             log.error("学生 {} 已存在", student.getSid());
-            return 0;
+            return "学生已存在";
         }
-        return studentMapper.insert(student);
+        // 插入学生
+        int result = studentMapper.insert(student);
+        if (result > 0) {
+            log.info("成功添加学生 {}", student.getSid());
+            return null;
+        }
+        log.error("添加学生 {} 失败", student.getSid());
+        return "添加学生失败";
     }
 
     @Override
