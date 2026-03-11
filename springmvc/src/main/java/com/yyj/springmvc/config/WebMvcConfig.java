@@ -25,8 +25,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
     // 配置拦截器
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        // 这里可以添加自定义拦截器
-        // registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/login", "/static/**");
+        // 注册JWT拦截器
+        registry.addInterceptor(new com.yyj.springmvc.interceptor.JWTInterceptor())
+                .addPathPatterns("/**")
+                .excludePathPatterns("/login", "/static/**");
     }
     
     // 配置路径映射

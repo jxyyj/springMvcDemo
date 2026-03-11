@@ -7,8 +7,8 @@
         </Console>
         
         <!-- 滚动文件输出 -->
-        <RollingFile name="RollingFile" fileName="springmvc/logs/application.log"
-                     filePattern="springmvc/logs/application-%d{yyyy-MM-dd}.log.gz">
+        <RollingFile name="RollingFile" fileName="logs/application.log"
+                     filePattern="logs/application-%d{yyyy-MM-dd}.log.gz">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
